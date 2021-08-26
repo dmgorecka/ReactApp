@@ -11,11 +11,14 @@ class Column extends React.Component {
      cards: this.props.cards || [],
     }
     static propTypes = {
-        titleCol: PropTypes.node,
+        title: PropTypes.node,
         cards: PropTypes.array,
         icon: PropTypes.node,
         addCard: PropTypes.func,
-    };
+    }
+    static defaultProps = {
+      icon: settings.defaultColumnIcon,
+    }
     addCard(title) {
      this.setState(state => (
        {
@@ -33,12 +36,12 @@ class Column extends React.Component {
         return(
             <section className={styles.component}>
                  <h3 className={styles.title}>
-                     {this.props.titleCol}
-                 </h3>
-                 <h3 className={styles.title}>
                      {this.props.title}
-                     
+                     <span className={styles.icon}>
+                      <Icon name={this.props.icon}/>
+                    </span>
                  </h3>
+                 <Icon name='facebook'/>
                  <div className={styles.cards}>
                     {this.state.cards.map(cardData => (
                         <Card key={cardData.id} {...cardData} />
