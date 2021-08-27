@@ -41,7 +41,6 @@ class Column extends React.Component {
               <Icon name={this.props.icon}/>
             </span>
           </h3>
-          <Icon name='facebook'/>
           <div className={styles.cards}>
             {this.state.cards.map(cardData => (
               <Card key={cardData.id} {...cardData} />
