@@ -1,4 +1,4 @@
-import shortid from 'shortid';
+//import shortid from 'shortid';
 
 // selectors
 
@@ -19,7 +19,7 @@ export const CHANGE = createActionName('CHANGE');
 
 // action creators
 
-export const createAction_changeSearchString = payload => ({ payload: { ...payload, id: shortid.generate() }, type: CHANGE });
+export const createActionChangeSearchString = (payload) => ({ payload, type: CHANGE});
 
 // reducer
 export default function reducer(statePart = '', action = {}) {
