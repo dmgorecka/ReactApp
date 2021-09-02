@@ -33,7 +33,6 @@ class Search extends React.Component {
   }
 
   handleOK(){
-
     this.props.history.push(`/search/${this.state.value}`);
   }
 
